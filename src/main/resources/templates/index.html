@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HOTEL GP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" th:href="@{/css/main.css}">
+
+  <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+  <link rel = "icon" href = "@{images/logo.png}" type = "image/png">
+</head>
+
+<body>
+
+
+<!-- header -->
+<header class = "header" id = "header">
+  <div class = "head-top">
+    <div class = "site-name">
+      <span>The Views</span>
+    </div>
+    <div class = "site-nav">
+      <span id = "nav-btn">MENU <i class = "fas fa-bars"></i></span>
+    </div>
+  </div>
+
+  <div class = "head-bottom flex">
+    <h2>YOUR IDEAL URBAN OASIS</h2>
+    <p>Welcome to the cozy and charming apartment nestled in the heart of the city. This inviting space greets you with warm, earthy tones that create an atmosphere of relaxation and comfort. The open-concept living area seamlessly connects the living room, dining area, and a well-equipped kitchen,
+      making it perfect for both entertaining guests and enjoying quiet evenings at home.</p>
+  </div>
+</header>
+<!-- end of header -->
+
+<!-- side navbar -->
+<div class = "sidenav" id = "sidenav">
+            <span class = "cancel-btn" id = "cancel-btn">
+                <i class = "fas fa-times"></i>
+            </span>
+
+  <ul class = "navbar">
+    <li><a href = "#header">Home</a></li>
+    <li><a href = "#services">Services</a></li>
+    <li><a href = "#rooms">Rooms</a></li>
+    <li><a href = "/myreservation">My Reservation</a></li>
+    <li><a href = "/profile">Profile</a></li>
+  </ul>
+  <button class = "btn log-in"><a href="/logout">Log Out</a></button>
+</div>
+<!-- end of side navbar -->
+
+<!-- fullscreen modal -->
+<div id = "modal"></div>
+<!-- end of fullscreen modal -->
+
+<!-- body content  -->
+<section class = "services sec-width" id = "services">
+  <div class = "title">
+    <h2>services</h2>
+  </div>
+  <div class = "services-container">
+    <!-- single service -->
+    <article class = "service">
+      <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-utensils"></i>
+                        </span>
+      </div>
+      <div class = "service-content">
+        <h2>Food Service/ Food Runner</h2>
+        <p>The food service in this apartment goes above and beyond to cater to your culinary desires. Whether you prefer cooking your own meals or ordering in, the fully-equipped kitchen makes preparing gourmet dishes a pleasure. High-quality appliances, ample counter space, and a variety of cookware ensure that even the most ambitious home cooks will feel right at ease. For those who appreciate the convenience of dining out, the apartment's location offers a plethora of restaurants, cafes, and eateries, showcasing an array of flavors from around the world.</p>
+        <!-- <button type = "button" class = "btn">Know More</button> -->
+      </div>
+    </article>
+    <!-- end of single service -->
+    <!-- single service -->
+    <article class = "service">
+      <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-swimming-pool"></i>
+                        </span>
+      </div>
+      <div class = "service-content">
+        <h2>Refreshment</h2>
+        <p>Indulge in a delightful array of refreshments right in the comfort of this charming apartment. A well-appointed kitchen awaits, stocked with all the essentials to unleash your culinary creativity. Sip on freshly brewed coffee or steep your favorite tea blends for a rejuvenating morning ritual.</p>
+        <!-- <button type = "button" class = "btn">Know More</button> -->
+      </div>
+    </article>
+    <!-- end of single service -->
+    <!-- single service -->
+    <article class = "service">
+      <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-broom"></i>
+                        </span>
+      </div>
+      <div class = "service-content">
+        <h2>Housekeeping</h2>
+        <p>Housekeeping in the apartment is diligently maintained to ensure a clean and organized living environment for its residents. A dedicated team of skilled professionals meticulously attend to every detail, keeping the space immaculate and welcoming. Regular cleaning schedules encompass sweeping and mopping floors, dusting surfaces, and meticulously sanitizing high-touch areas. The bathrooms are meticulously scrubbed, and fresh towels are regularly provided.</p>
+        <!-- <button type = "button" class = "btn">Know More</button> -->
+      </div>
+    </article>
+    <!-- end of single service -->
+    <!-- single service -->
+    <article class = "service">
+      <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-door-closed"></i>
+                        </span>
+      </div>
+      <div class = "service-content">
+        <h2>Room Security</h2>
+        <p>Room security in the apartment is of utmost importance, providing residents with peace of mind and a sense of safety within their living space. The apartment is equipped with state-of-the-art security features, including a robust access control system that restricts entry only to authorized individuals. Residents gain entry through secure key cards or biometric recognition, ensuring that only residents and approved visitors can access the premises. In addition to the main entrance, each individual
+          apartment is equipped with sturdy, tamper-proof locks, providing an extra layer of protection for personal belongings and privacy.</p>
+        <!-- <button type = "button" class = "btn">Know More</button> -->
+      </div>
+    </article>
+    <!-- end of single service -->
+  </div>
+</section>
+
+<div class = "book">
+  <form class = "book-form"  th:action="@{/create}" th:method="@{post}">
+    <div class = "form-item">
+      <label >Check In Date: </label>
+      <input type = "date" name="checkindate" >
+    </div>
+    <div class = "form-item">
+      <label >Check Out Date: </label>
+      <input type = "date" name = "checkoutdate">
+    </div>
+    <div class = "form-item">
+      <label for = "persons">Persons: </label>
+      <input type = "number" min = "1" value = "1" name = "persons" id = "persons">
+    </div>
+    <div class = "form-item">
+      <label for = "days">Days: </label>
+      <input type = "number" min = "1" value = "1" name = "days" id = "days">
+    </div>
+    <div class = "form-item">
+      <input type = "submit" class = "btn" value = "Book Now">
+    </div>
+  </form>
+</div>
+
+
+<section class = "rooms sec-width" id = "rooms">
+  <div class = "title">
+    <h2>rooms</h2>
+  </div>
+  <div class = "rooms-container">
+    <!-- single room -->
+    <article class = "room">
+      <div class = "room-image">
+        <img th:src = "@{/images/hotelroom2.jpg}" alt = "room image">
+      </div>
+      <div class = "room-text">
+        <h3>Luxury Rooms</h3>
+        <ul>
+          <li>
+            <i class = "fas fa-arrow-alt-circle-right"></i>
+            For upto three persons
+          </li>
+          <li>
+            <i class = "fas fa-arrow-alt-circle-right"></i>
+            In-built closet present
+          </li>
+          <li>
+            <i class = "fas fa-arrow-alt-circle-right"></i>
+            Desks, chairs and coffee table also present
+          </li>
+        </ul>
+        <p>A minimalist-designed room, every element serves a purpose and contributes to a sense of harmony and simplicity. The color palette is often kept neutral, featuring soft hues like whites, grays, and earthy tones, which promote a calming and timeless atmosphere. Furniture is sleek, with clean lines and functional designs, carefully chosen to avoid unnecessary excess</p>
+      </div>
+    </article>
+    <!-- end of single room -->
+    <!-- single room -->
+    <article class = "room">
+      <div class = "room-image">
+        <img th:src = "@{images/hotelroom1.jpg}" alt = "room image">
+      </div>
+      <div class = "room-text">
+        <h3>Luxury Rooms</h3>
+        <ul>
+          <li>
+            <i class = "fas fa-arrow-alt-circle-right"></i>
+            For Two persons
+          </li>
+          <li>
+            <i class = "fas fa-arrow-alt-circle-right"></i>
+            Built-in closets, wardrobes, or dressers
+          </li>
+          <li>
+            <i class = "fas fa-arrow-alt-circle-right"></i>
+            Providing natural light and ventilation while offering views of the outside
+          </li>
+        </ul>
+        <p>A minimalist-designed room, every element serves a purpose and contributes to a sense of harmony and simplicity. The color palette is often kept neutral, featuring soft hues like whites, grays, and earthy tones, which promote a calming and timeless atmosphere.
+          Furniture is sleek, with clean lines and functional designs, carefully chosen to avoid unnecessary excess</p>
+      </div>
+    </article>
+    <!-- end of single room -->
+
+  </div>
+</section>
+
+
+
+<!-- footer -->
+<footer class = "footer">
+  <div class = "footer-container">
+    <div>
+      <h2>About Us </h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque sapiente mollitia doloribus provident? Eos quisquam aliquid vel dolorum, impedit culpa.</p>
+      <ul class = "social-icons">
+        <li class = "flex">
+          <i class = "fa fa-twitter fa-2x"></i>
+        </li>
+        <li class = "flex">
+          <i class = "fa fa-facebook fa-2x"></i>
+        </li>
+        <li class = "flex">
+          <i class = "fa fa-instagram fa-2x"></i>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Useful Links</h2>
+      <a href = "#">Blog</a>
+      <a href = "#">Rooms</a>
+      <a href = "#">Subscription</a>
+      <a href = "#">Gift Card</a>
+    </div>
+
+    <div>
+      <h2>Privacy</h2>
+      <a href = "#">Career</a>
+      <a href = "#">About Us</a>
+      <a href = "#">Contact Us</a>
+      <a href = "#">Services</a>
+    </div>
+
+    <div>
+      <h2>Have A Question</h2>
+      <div class = "contact-item">
+                        <span>
+                            <i class = "fas fa-map-marker-alt"></i>
+                        </span>
+        <span>
+                            203 Fake St.Mountain View, San Francisco, California, USA
+                        </span>
+      </div>
+      <div class = "contact-item">
+                        <span>
+                            <i class = "fas fa-phone-alt"></i>
+                        </span>
+        <span>
+                            +84545 37534 48
+                        </span>
+      </div>
+      <div class = "contact-item">
+                        <span>
+                            <i class = "fas fa-envelope"></i>
+                        </span>
+        <span>
+                            info@domain.com
+                        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end of footer -->
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

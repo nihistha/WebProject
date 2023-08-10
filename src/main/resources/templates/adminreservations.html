@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reservations</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link th:href="@{/css/reservation.css}" rel="stylesheet">
+
+</head>
+<body>
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            The oasis
+        </a>
+    </div>
+</nav>
+
+<div class ="container"
+     style="background-color: white;
+     margin-top: 20px; margin-bottom: 20px;
+     border-radius: 12px;
+     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;" >
+    <div class = "row" style="justify-content: space-between">
+        <h2 style="padding: 20px">Total Reservations</h2>
+    </div>
+    <table border="1" class = "table table-responsive-md" style="padding-top: 60px">
+        <thead>
+        <tr>
+            <th> No of People</th>
+            <th> No of days</th>
+            <th> Check in Date </th>
+            <th> Check out Date </th>
+            <th> Price </th>
+            <th> Total Price </th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each = "reservation: ${reservations}">
+            <td th:text = "${reservation.persons}"></td>
+            <td th:text = "${reservation.days}"></td>
+            <td th:text = "${reservation.checkIndate}"></td>
+            <td th:text = "${reservation.checkOutdate}"></td>
+            <td th:text = "${reservation.price}"></td>
+            <td th:text = "${reservation.total}"></td>
+            <td>
+<!--                <div class="btn-group" role="group" aria-label="Basic example">-->
+
+<!--                    <a th:href = "@{/employee/edit/{id}(id=${employee.id})}"-->
+<!--                       class = "btn btn-success">Update</a>-->
+
+<!--                    <a th:href = "@{/employee/{id}(id=${employee.id})}"-->
+<!--                       class = "btn btn-danger" onclick="if (!(confirm('Are you sure you want to Cancel the reservation?'))) return false"-->
+<!--                       style="color: white">Cancel</a>-->
+<!--                </div>-->
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+    <br>
+</div>
+</body>
+</html>

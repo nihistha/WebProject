@@ -1,0 +1,8 @@
+.body{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background:url("http://localhost:8080/images/kitchen.jpg") center center/cover no-repeat;
+    background-color: rgba(0,0,0,0.45);
+    background-blend-mode: overlay;
+}

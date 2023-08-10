@@ -1,0 +1,21 @@
+body{
+    background-color: #dad7cd;
+}
+.table table-responsive-md{
+    position:absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+    height: 500px;
+    text-align: center;
+}
+th,td{
+    background: #52796f;
+    text-transform: uppercase;
+    color: #f6fff8;
+}
+navbar bg-body-tertiary{
+    background-color: #bcd4e6;
+}

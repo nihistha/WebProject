@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>User Profile</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
+
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="userProfile.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container">
+  <main>
+
+    <div class="py-5 text-center container bg-light">
+      <div class="container ">
+
+        <img class="golo d-block mx-auto mb-4" src="male.jpg" alt="" >
+      </div>
+      <h2 class="text-warning ">Your Profile</h2>
+      <p class="lead">You can make changes in your profile</p>
+    </div>
+    <hr>
+  </main>
+  <div class="col-md-7 col-lg-12">
+    <h4 class="mb-3 fst-italic fw-bold text-success">Your details</h4>
+    <form class="needs-validation" th:action="@{/editprofile}" th:method="@{post}" novalidate>
+      <div class="row g-3">
+        <div class="col-sm-12">
+          <label for="Fullname" class="form-label fw-light">Full name</label>
+          <input th:value="${user.name}" type="text" class="form-control" name ="Name" id="Fullname" placeholder="" value="" required>
+          <div class="invalid-feedback">
+            Valid full  name is required.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="Username" class="form-label fw-light">Username</label>
+          <input th:value="${user.username}" type="email" name ="username" class="form-control" id="Username" >
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="phonenumber" class="form-label fw-light">Phone Number</label>
+          <input th:value="${user.Cust_number}" name ="phone"  type="email" class="form-control" id="phonenumber" >
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="location" class="form-label fw-light">Location</label>
+          <input th:value="${user.cust_location}" name ="location" type="email" class="form-control" id="location" >
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+
+
+
+        <div class="col-12">
+          <label for="newPassword" class="form-label fw-light"> New Password</label>
+          <input type="text" class="form-control" name="password" id="newPassword" placeholder="********" required>
+          <div class="invalid-feedback">
+            Please enter a password
+          </div>
+        </div>
+      <input type = "hidden" name ="id" th:value="${user.id}">
+
+      </div>
+      <hr class="my-4">
+
+      <button class="w-100 btn btn-primary btn-lg" type="submit">Save</button>
+    </form>
+  </div>
+</div>
+</main>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+  <p class="mb-1">&copy; 2023–2023 Junglee</p>
+  <ul class="list-inline">
+    <li class="list-inline-item"><a href="#">Privacy</a></li>
+    <li class="list-inline-item"><a href="#">Terms</a></li>
+    <li class="list-inline-item"><a href="#">Support</a></li>
+  </ul>
+</footer>
+</div>
+
+
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="form-validation.js"></script>
+</body>
+</html>
